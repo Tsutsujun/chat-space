@@ -22,22 +22,22 @@
 - has_many :groups, through: :groups_users
 
 ### groups_usersテーブル
-|Column  |Type   |Options                                    |
-|--------|-------|-------------------------------------------|
-|group_id|integer|null: false, foreign_key: true             |
-|user_id |integer|null: false, foreign_key: true, index: true|
+|Column  |Type      |Options                                    |
+|--------|----------|-------------------------------------------|
+|group_id|references|null: false, foreign_key: true             |
+|user_id |references|null: false, foreign_key: true, index: true|
 #### Association
 - belongs_to :group
 - belongs_to :user
 - has_many   :messages
 
 ### messagesテーブル
-|Column       |Type   |Options                                    |
-|-------------|-------|-------------------------------------------|
-|body         |text   |null: false                                |
-|image        |string |                                           |
-|group_id     |integer|null: false, foreign_key: true             |
-|group_user_id|integer|null: false, foreign_key: true, index: true|
+|Column       |Type      |Options                                    |
+|-------------|----------|-------------------------------------------|
+|body         |text      |null: false                                |
+|image        |string    |                                           |
+|group_id     |references|null: false, foreign_key: true             |
+|group_user_id|references|null: false, foreign_key: true, index: true|
 #### Association
 - belongs_to :group
 - belongs_to :group_user

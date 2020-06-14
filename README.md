@@ -39,3 +39,5 @@
 |group_id     |integer|null: false, foreign_key: true             |
 |group_user_id|integer|null: false, foreign_key: true, index: true|
 #### Association
+- belongs_to :group
+- belongs_to :group_user

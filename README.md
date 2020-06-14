@@ -13,3 +13,6 @@
 - has_many :groups, through: :groups_users
 
 ### groupsテーブル
+|Column   |Type  |Options                  |
+|---------|------|-------------------------|
+|groupname|string|null: false, unique: true|

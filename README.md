@@ -3,9 +3,9 @@
 ## ChatSpace データベース設計
 
 ### groupsテーブル
-|Column   |Type  |Options                  |
-|---------|------|-------------------------|
-|groupname|string|null: false, unique: true|
+|Column   |Type|Options                  |
+|---------|----|-------------------------|
+|groupname|text|null: false, unique: true|
 #### Association
 - has_many :groups_users
 - has_many :users, through: :groups_users

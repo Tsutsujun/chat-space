@@ -40,4 +40,4 @@
 |group_user_id|references|null: false, foreign_key: true, index: true|
 #### Association
 - belongs_to :group
-- belongs_to :group_user
+- belongs_to :user

@@ -23,10 +23,10 @@
 - has_many :messages
 
 ### groups_usersテーブル
-|Column  |Type      |Options                                    |
-|--------|----------|-------------------------------------------|
-|group_id|references|null: false, foreign_key: true             |
-|user_id |references|null: false, foreign_key: true, index: true|
+|Column|Type      |Options                       |
+|------|----------|------------------------------|
+|group |references|null: false, foreign_key: true|
+|user  |references|null: false, foreign_key: true|
 #### Association
 - belongs_to :group
 - belongs_to :user

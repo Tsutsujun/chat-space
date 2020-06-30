@@ -15,18 +15,19 @@
     &__UserPlate {
       background-color: #d8d8d8;
       width: 260px;
-      height: 20px;
+      line-height: 20px;
       margin: 0 20px;
       display: flex;
       justify-content: space-between;
       &--Name {
         background-color: gray;
         width: 100px;
-        line-height: 20px;
       }
-      &--Icons {
+      &__Icons {
         background-color: gray;
         width: 60px;
+        &--btn {
+        }
       }
     }
   }

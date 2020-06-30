@@ -3,9 +3,10 @@
     .SideBar__Header__UserPlate
       .SideBar__Header__UserPlate--Name
         Tsutsujun
-      .SideBar__Header__UserPlate__Icons
-        = link_to "#" do
-          = icon('far', 'edit', class: "SideBar__Header__UserPlate__Icons--btn")
-        = link_to "#" do
-          = icon('fa', 'cog', class: "SideBar__Header__UserPlate__Icons--btn")
+      .SideBar__Header__UserPlate__Items
+        = link_to "#", class: "SideBar__Header__UserPlate__Items--Btn" do
+          = icon('far', 'edit', class: "SideBar__Header__UserPlate__Items--Icon")
+          %span<>
+        = link_to "#", class: "SideBar__Header__UserPlate__Items--Btn" do
+          = icon('fas', 'cog', class: "SideBar__Header__UserPlate__Items--Icon")
   .SideBar__GroupList

@@ -7,32 +7,31 @@
   width: 300px;
   height: 100vh;
   float: left;
+  color: #ffffff;
+  font-weight: bold;
   &__Header {
     background-color: inherit;
     height: 100px;
     display: flex;
     align-items: center;
     &__UserPlate {
-      background-color: #d8d8d8;
       width: 260px;
       line-height: 20px;
       margin: 0 20px;
       display: flex;
       justify-content: space-between;
       &--Name {
-        background-color: gray;
-        width: 100px;
+        font-size: 16px;
       }
       &__Items {
-        background-color: gray;
         width: 60px;
         text-align: right;
         &--Btn {
+          color: inherit;
           text-decoration: none;
         }
         &--Icon {
-          color: #ffffff;
-          margin-left: 5px;
+          padding-left: 5px;
         }
       }
     }

@@ -79,6 +79,10 @@
         margin-top: 15px;
         color: #999999;
         font-size: 12px;
+        display: flex;
+        &--Member {
+          margin-right: 5px;
+        }
       }
     }
   }

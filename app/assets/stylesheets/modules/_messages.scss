@@ -65,7 +65,7 @@
   &__Header {
     background-color: inherit;
     height: 100px;
-    border-bottom: #eeeeee solid 1px;
+    border-bottom: #eeeeee 1px solid;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
@@ -89,7 +89,7 @@
       width: 72px;
       height: 40px;
       line-height: 40px;
-      border: #38aef0 solid 1px;
+      border: #38aef0 1px solid;
       margin-top: 28px;
       padding: 0 20px;
       color: #38aef0;

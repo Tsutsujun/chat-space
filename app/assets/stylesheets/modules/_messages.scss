@@ -102,6 +102,10 @@
     padding: 35px 40px 0;
     .MessageInfo {
       margin-bottom: 46px;
+      &__TopBox {
+        margin-bottom: 12px;
+        display: flex;
+      }
     }
   }
   &__Footer {

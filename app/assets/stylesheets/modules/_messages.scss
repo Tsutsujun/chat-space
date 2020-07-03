@@ -69,6 +69,13 @@
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
+    .CurrentGroup {
+      &--Name {
+        margin-top: 35px;
+        color: #333333;
+        font-size: 20px;
+      }
+    }
   }
   &__MessageList {
     background-color: #fafafa;

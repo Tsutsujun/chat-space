@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     .UserPlate {
-      width: 260px;
+      width: 100vw;
       line-height: 20px;
       display: flex;
       justify-content: space-between;
@@ -125,5 +125,13 @@
   &__Footer {
     background-color: #d2d2d2;
     height: 90px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    .NewMessage {
+      background-color: #d8d8d8;
+      width: 100vw;
+      height: 50px;
+    }
   }
 }

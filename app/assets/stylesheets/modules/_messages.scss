@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     .UserPlate {
-      width: 100vw;
+      width: 100%;
       line-height: 20px;
       display: flex;
       justify-content: space-between;
@@ -117,7 +117,7 @@
         }
       }
       &--TextOrImg {
-        color: #434A54;
+        color: #434a54;
         font-size: 14px;
       }
     }
@@ -130,8 +130,13 @@
     align-items: center;
     .NewMessage {
       background-color: #d8d8d8;
-      width: 100vw;
+      width: 100%;
       height: 50px;
+      &__InputField {
+        width: calc(100% - 100px - 15px);
+        height: inherit;
+        padding: 0 10px;
+      }
     }
   }
 }

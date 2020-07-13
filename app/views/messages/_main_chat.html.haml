@@ -34,3 +34,5 @@
     %form.NewMessage
       .NewMessage__InputField
         %input.NewMessage__InputField--TypingText{type: "text", name: "body", placeholder:"type a message"}
+        %input.NewMessage__InputField--ImgBtn{type: "file"}
+        = icon('far', 'image', class: "NewMessage__InputField--ImgIcon")

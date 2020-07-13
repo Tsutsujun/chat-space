@@ -141,6 +141,12 @@
           padding: 0 10px;
           border-style: none;
         }
+        &--ImgBtn {
+          display: none;
+        }
+        &--ImgIcon {
+          font-size: 1.3rem;
+        }
       }
     }
   }

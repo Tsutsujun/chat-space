@@ -135,17 +135,21 @@
       &__InputField {
         width: calc(100% - 100px - 15px);
         height: inherit;
+        position: relative;
         &--TypingText {
           width: 100%;
           height: inherit;
           padding: 0 10px;
           border-style: none;
         }
-        &--ImgBtn {
-          display: none;
-        }
-        &--ImgIcon {
-          font-size: 1.3rem;
+        &__Mask {
+          position: absolute;
+          &--ImgBtn {
+            display: none;
+          }
+          &--ImgIcon {
+            font-size: 1.3rem;
+          }
         }
       }
     }

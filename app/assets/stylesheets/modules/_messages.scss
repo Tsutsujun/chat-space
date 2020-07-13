@@ -135,6 +135,7 @@
       &__InputField {
         width: calc(100% - 100px - 15px);
         height: inherit;
+        float: left;
         position: relative;
         &--TypingText {
           width: 100%;
@@ -154,6 +155,14 @@
             font-size: inherit;
           }
         }
+      }
+      &--SendBtn {
+        background-color: #38aef0;
+        width: 100px;
+        height: inherit;
+        margin-left: 15px;
+        float: right;
+        color: #ffffff;
       }
     }
   }

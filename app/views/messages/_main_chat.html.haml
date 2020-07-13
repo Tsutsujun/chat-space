@@ -35,5 +35,6 @@
       .NewMessage__InputField
         %input.NewMessage__InputField--TypingText{type: "text", name: "body", placeholder:"type a message"}
         %label.NewMessage__InputField__Mask
-          %input.NewMessage__InputField__Mask--ImgBtn{type: "file"}
+          %input.NewMessage__InputField__Mask--ImgBtn{type: "file", name: "image"}
           = icon('far', 'image', class: "NewMessage__InputField__Mask--ImgIcon")
+      %input.NewMessage--SendBtn{type: "submit", name:"commit", value: "Send"}

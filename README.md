@@ -12,11 +12,11 @@
 - has_many :messages
 
 ### usersテーブル
-|Column  |Type  |Options                               |
-|--------|------|--------------------------------------|
-|name    |string|null: false, unique: true, index: true|
-|email   |string|null: false, unique: true, index: true|
-|password|string|null: false                           |
+|Column            |Type  |Options                               |
+|------------------|------|--------------------------------------|
+|name              |string|null: false, unique: true, index: true|
+|email             |string|null: false, unique: true, index: true|
+|encrypted_password|string|null: false                           |
 #### Association
 - has_many :group_users
 - has_many :groups, through: :group_users

@@ -1,22 +1,20 @@
 .SideBar
+
   .SideBar__Header
     .UserPlate
       .UserPlate--Name
         = current_user.name
       .UserPlate__Items
-        = link_to "#", class: "UserPlate__Items__Btn" do
+        = link_to new_group_path, class: "UserPlate__Items__Btn" do
           = icon('fas', 'edit', class: "UserPlate__Items__Btn--Icon")
           %span<>
         = link_to edit_user_path(current_user), class: "UserPlate__Items__Btn" do
           = icon('fas', 'cog', class: "UserPlate__Items__Btn--Icon")
+
   .SideBar__GroupList
-    = link_to "#", class: "GroupSnippet" do
-      %p.GroupSnippet--Title
-        TECH CAMP エンジニア転職
-      %p.GroupSnippet--LastMessage
-        かなり遅れてますが、頑張って追いついて必ずや今月末までに納品させてやります！
-    = link_to "#", class: "GroupSnippet" do
-      %p.GroupSnippet--Title
-        TECH::EXPERT
-      %p.GroupSnippet--LastMessage
-        「TECH CAMP エンジニア転職」の旧名！
+    - current_user.groups.each do |group|
+      = link_to "#", class: "GroupSnippet" do
+        %p.GroupSnippet--Title
+          = group.title
+        %p.GroupSnippet--LastMessage
+          メッセージはまだありません。

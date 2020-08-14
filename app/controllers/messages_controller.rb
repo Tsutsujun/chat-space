@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
-    Message.create(message_params)
+    @message = @group.messages.new(message_params)
   end
 
   private

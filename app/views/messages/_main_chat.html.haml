@@ -31,7 +31,7 @@
       %p.MessageInfo--TextOrImg
         かなり遅れてますが、頑張って追いついて必ずや今月末までに納品させてやります！
   .MainChat__Footer
-    %form.NewMessage
+    = form_for [@group, @message], html: {class: "NewMessage"} do |f|
       .NewMessage__InputField
         %input.NewMessage__InputField--TypingText{type: "text", name: "body", placeholder:"type a message"}
         %label.NewMessage__InputField__Mask

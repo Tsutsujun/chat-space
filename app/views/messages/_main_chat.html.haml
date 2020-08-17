@@ -34,7 +34,7 @@
     = form_for [@group, @message], html: {class: "NewMessage"} do |f|
       .NewMessage__InputField
         = f.text_field :body, placeholder: "type a message", class: "NewMessage__InputField--TypingText"
-        %label.NewMessage__InputField__Mask
+        = f.label class: "NewMessage__InputField__Mask" do
           = icon('far', 'image', class: "NewMessage__InputField__Mask--ImgIcon")
           = f.file_field :image, class: "NewMessage__InputField__Mask--ImgBtnHiiden"
       = f.submit "Send", class: "NewMessage--SendBtn"

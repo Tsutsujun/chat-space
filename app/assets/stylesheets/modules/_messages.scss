@@ -153,11 +153,11 @@
           right: 10px;
           font-size: 1.3rem;
           cursor: pointer;
-          &--ImgBtn {
-            display: none;
-          }
           &--ImgIcon {
             font-size: inherit;
+          }
+          &--ImgBtnHidden {
+            display: none;
           }
         }
       }

@@ -33,8 +33,8 @@
   .MainChat__Footer
     = form_for [@group, @message], html: {class: "NewMessage"} do |f|
       .NewMessage__InputField
-        %input.NewMessage__InputField--TypingText{type: "text", name: "body", placeholder:"type a message"}
+        = f.text_field :body, placeholder: "type a message", class: "NewMessage__InputField--TypingText"
         %label.NewMessage__InputField__Mask
-          %input.NewMessage__InputField__Mask--ImgBtn{type: "file", name: "image"}
           = icon('far', 'image', class: "NewMessage__InputField__Mask--ImgIcon")
-      %input.NewMessage--SendBtn{type: "submit", name:"commit", value: "Send"}
+          = f.file_field :image, class: "NewMessage__InputField__Mask--ImgBtnHiiden"
+      = f.submit "Send", class: "NewMessage--SendBtn"

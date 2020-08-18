@@ -1,4 +1,5 @@
 .MainChat
+
   .MainChat__Header
     .CurrentGroup
       %h2.CurrentGroup--Title
@@ -11,25 +12,19 @@
           Junko
     = link_to "#", class:"EditBtn" do
       Edit
+
   .MainChat__MessageList
-    .MessageInfo
-      .MessageInfo__TopBox
-        %p.MessageInfo__TopBox--Name
-          Tsutsujun
-        %p.MessageInfo__TopBox--Date
-          2020/04/18(Sat) 09:00:00
-      %p.MessageInfo--TextOrImg
-        はじめまして！夜間休日スタイル転職コース・76期生の堤淳一です！
-        %br
-        よろしくお願いいたします！m(_ _)m
-    .MessageInfo
-      .MessageInfo__TopBox
-        %p.MessageInfo__TopBox--Name
-          Tsutsujun
-        %p.MessageInfo__TopBox--Date
-          2020/07/15(Wed) 09:00:00
-      %p.MessageInfo--TextOrImg
-        かなり遅れてますが、頑張って追いついて必ずや今月末までに納品させてやります！
+    - @messages.each do |message|
+      .MessageInfo
+        .MessageInfo__TopBox
+          %p.MessageInfo__TopBox--Name
+            = message.user.name
+          %p.MessageInfo__TopBox--Date
+            = message.created_at
+        %p.MessageInfo--TextOrImg
+          = message.body
+          = message.image
+
   .MainChat__Footer
     = form_for [@group, @message], html: {class: "NewMessage"} do |f|
       .NewMessage__InputField

@@ -20,7 +20,7 @@
           %p.MessageInfo__TopBox--Name
             = message.user.name
           %p.MessageInfo__TopBox--Date
-            = message.created_at
+            = message.created_at.strftime("%Y/%m/%d(%a) %T")
         %p.MessageInfo--TextOrImg
           = message.body
           = message.image

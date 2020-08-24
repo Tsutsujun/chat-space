@@ -24,7 +24,8 @@
         - if message.body.present?
           %p.MessageInfo--Text
             = message.body
-          = message.image
+        - if message.image.present?
+          = image_tag message.image.url, class: "MessageInfo--Img"
 
   .MainChat__Footer
     = form_for [@group, @message], html: {class: "NewMessage"} do |f|

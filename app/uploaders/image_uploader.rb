@@ -7,8 +7,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
-  process resize_to_fit: [800, 800]
-
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -34,6 +32,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
+
+  process resize_to_fit: [800, 800]
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

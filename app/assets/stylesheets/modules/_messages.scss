@@ -147,6 +147,9 @@
           padding: 0 40px 0 10px;
           border: none;
         }
+        &--HiddenImgBtn {
+          display: none;
+        }
         &__Mask {
           line-height: 50px;
           position: absolute;
@@ -155,9 +158,6 @@
           cursor: pointer;
           &--ImgIcon {
             font-size: inherit;
-          }
-          &--ImgBtnHidden {
-            display: none;
           }
         }
       }

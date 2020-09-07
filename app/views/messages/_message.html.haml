@@ -4,8 +4,8 @@
       = message.user.name
     %p.MessageInfo__TopBox--Date
       = message.set_datetime
-  - if message.body.present?
+  - if message.body?
     %p.MessageInfo--Text
       = message.body
-  - if message.image.present?
+  - if message.image?
     = image_tag message.image.url, class: "MessageInfo--Img"

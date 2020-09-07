@@ -14,18 +14,7 @@
       Edit
 
   .MainChat__MessageList
-    - @messages.each do |message|
-      .MessageInfo
-        .MessageInfo__TopBox
-          %p.MessageInfo__TopBox--Name
-            = message.user.name
-          %p.MessageInfo__TopBox--Date
-            = message.set_datetime
-        - if message.body.present?
-          %p.MessageInfo--Text
-            = message.body
-        - if message.image.present?
-          = image_tag message.image.url, class: "MessageInfo--Img"
+    = render @messages
 
   .MainChat__Footer
     = form_for [@group, @message], html: {class: "NewMessage"} do |f|

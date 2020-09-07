@@ -5,4 +5,8 @@ class Message < ApplicationRecord
   validates :body, presence: true, unless: :image?
 
   mount_uploader :image, ImageUploader
+
+  def set_datetime
+    created_at.strftime("%Y/%m/%d(%a) %T")
+  end
 end

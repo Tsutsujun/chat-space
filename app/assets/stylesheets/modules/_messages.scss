@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.field_with_errors {
+  display: contents;
+}
+
 .SideBar {
   background-color: #253141;
   width: 300px;
@@ -143,7 +147,7 @@
         position: relative;
         &--TypingText {
           width: 100%;
-          height: inherit;
+          height: 50px;
           padding: 0 40px 0 10px;
           border: none;
         }

@@ -17,4 +17,10 @@
         %p.GroupSnippet--Title
           = group.title
         %p.GroupSnippet--LastMessage
-          まだメッセージはありません。
+          - if group.messages[group.messages.length-1].present?
+            - if group.messages[group.messages.length-1].body?
+              = group.messages[group.messages.length-1].body
+            - else
+              画像が投稿されています。
+          - else
+            まだメッセージはありません。

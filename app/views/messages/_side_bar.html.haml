@@ -18,9 +18,6 @@
           = group.title
         %p.GroupSnippet--LastMessage
           - unless group.messages.empty?
-            - if group.messages.last.body?
-              = group.messages.last.body
-            - else
-              画像が投稿されています。
+            = group.messages.last.body.presence || "画像が投稿されています。"
           - else
             まだメッセージはありません。

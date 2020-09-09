@@ -17,7 +17,7 @@
         %p.GroupSnippet--Title
           = group.title
         %p.GroupSnippet--LastMessage
-          - if group.messages.last.present?
+          - unless group.messages.empty?
             - if group.messages.last.body?
               = group.messages.last.body
             - else

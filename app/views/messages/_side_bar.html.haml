@@ -17,9 +17,9 @@
         %p.GroupSnippet--Title
           = group.title
         %p.GroupSnippet--LastMessage
-          - if group.messages[group.messages.length-1].present?
-            - if group.messages[group.messages.length-1].body?
-              = group.messages[group.messages.length-1].body
+          - if group.messages.last.present?
+            - if group.messages.last.body?
+              = group.messages.last.body
             - else
               画像が投稿されています。
           - else

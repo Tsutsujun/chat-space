@@ -3,7 +3,7 @@
     %p.MessageInfo__TopBox--Name
       = message.user.name
     %p.MessageInfo__TopBox--Date
-      = message.set_datetime
+      = message.show_datetime
   - if message.body?
     %p.MessageInfo--Text
       = message.body

@@ -6,7 +6,7 @@ class Message < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  def set_datetime
+  def show_datetime
     created_at.strftime("%Y/%m/%d(%a) %T")
   end
 end

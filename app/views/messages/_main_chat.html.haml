@@ -1,40 +1,25 @@
 .MainChat
+
   .MainChat__Header
     .CurrentGroup
       %h2.CurrentGroup--Title
-        TECH CAMP エンジニア転職
+        = @group.title
       %ul.CurrentGroup__MemberList
         Member：
-        %li.CurrentGroup__MemberList--Member
-          Tsutsujun
-        %li.CurrentGroup__MemberList--Member
-          Junko
-    = link_to "#", class:"EditBtn" do
+        - @group.users.each do |user|
+          %li.CurrentGroup__MemberList--Member
+            = user.name
+    = link_to edit_group_path(@group), class:"EditBtn" do
       Edit
+
   .MainChat__MessageList
-    .MessageInfo
-      .MessageInfo__TopBox
-        %p.MessageInfo__TopBox--Name
-          Tsutsujun
-        %p.MessageInfo__TopBox--Date
-          2020/04/18(Sat) 09:00:00
-      %p.MessageInfo--TextOrImg
-        はじめまして！夜間休日スタイル転職コース・76期生の堤淳一です！
-        %br
-        よろしくお願いいたします！m(_ _)m
-    .MessageInfo
-      .MessageInfo__TopBox
-        %p.MessageInfo__TopBox--Name
-          Tsutsujun
-        %p.MessageInfo__TopBox--Date
-          2020/07/15(Wed) 09:00:00
-      %p.MessageInfo--TextOrImg
-        かなり遅れてますが、頑張って追いついて必ずや今月末までに納品させてやります！
+    = render @messages
+
   .MainChat__Footer
-    %form.NewMessage
+    = form_for [@group, @message], html: {class: "NewMessage"} do |f|
       .NewMessage__InputField
-        %input.NewMessage__InputField--TypingText{type: "text", name: "body", placeholder:"type a message"}
-        %label.NewMessage__InputField__Mask
-          %input.NewMessage__InputField__Mask--ImgBtn{type: "file", name: "image"}
+        = f.text_field :body, placeholder: "type a message", class: "NewMessage__InputField--TypingText"
+        = f.file_field :image, class: "NewMessage__InputField--HiddenImgBtn"
+        = f.label :image, class: "NewMessage__InputField__Mask" do
           = icon('far', 'image', class: "NewMessage__InputField__Mask--ImgIcon")
-      %input.NewMessage--SendBtn{type: "submit", name:"commit", value: "Send"}
+      = f.submit "Send", class: "NewMessage--SendBtn"

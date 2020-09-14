@@ -1,0 +1,11 @@
+.MessageInfo
+  .MessageInfo__TopBox
+    %p.MessageInfo__TopBox--Name
+      = message.user.name
+    %p.MessageInfo__TopBox--Date
+      = message.show_datetime
+  - if message.body?
+    %p.MessageInfo--Text
+      = message.body
+  - if message.image?
+    = image_tag message.image.url, class: "MessageInfo--Img"

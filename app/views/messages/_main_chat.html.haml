@@ -6,10 +6,9 @@
         = @group.title
       %ul.CurrentGroup__MemberList
         Member：
-        %li.CurrentGroup__MemberList--Member
-          Tsutsujun
-        %li.CurrentGroup__MemberList--Member
-          Junko
+        - @group.users.each do |user|
+          %li.CurrentGroup__MemberList--Member
+            = user.name
     = link_to "#", class:"EditBtn" do
       Edit
 

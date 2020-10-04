@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :message do
     body
-    image
+    image {File.open("#{Rails.root}/public/images/test_image.jpg")}
     group
     user
   end

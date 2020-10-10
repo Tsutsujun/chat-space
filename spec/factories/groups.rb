@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :group do
-    title
+    title {Faker::Team.name}
   end
 end

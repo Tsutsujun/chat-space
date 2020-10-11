@@ -11,6 +11,11 @@ describe Message do
         message = build(:message, body: "")
         expect(message).to be_valid
       end
+
+      it "テキストと画像があれば保存できる。" do
+        message = build(:message)
+        expect(message).to be_valid
+      end
     end
 
     describe "メッセージを保存できない場合" do

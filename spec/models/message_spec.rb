@@ -2,7 +2,10 @@ describe Message do
   describe '#save' do
 
     describe "メッセージを保存できる場合" do
-
+      it "テキストがあれば保存できる。" do
+        message = build(:message, image: "")
+        expect(message).to be_valid
+      end
     end
 
     describe "メッセージを保存できない場合" do

@@ -30,6 +30,12 @@ describe Message do
         message.valid?
         expect(message.errors[:group]).to include("を入力してください")
       end
+
+      it "外部キー(user_id)が無いと保存できないこと" do
+        message = build(:message, user_id: nil)
+        message.valid?
+        expect(message.errors[:user]).to include("を入力してください")
+      end
     end
 
   end

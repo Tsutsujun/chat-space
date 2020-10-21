@@ -1,7 +1,7 @@
 RSpec.describe Message, type: :model do
   describe '#save' do
 
-    describe "メッセージ(message)を保存できる場合" do
+    context "メッセージ(message)を保存できる場合" do
       it "テキスト(body)があれば保存できること" do
         message = build(:message, image: nil)
         expect(message).to be_valid
@@ -18,7 +18,7 @@ RSpec.describe Message, type: :model do
       end
     end
 
-    describe "メッセージ(message)を保存できない場合" do
+    context "メッセージ(message)を保存できない場合" do
       it "テキスト(body)と画像(image)が両方とも無かったら保存できないこと" do
         message = build(:message, body: "", image: nil)
         message.valid?

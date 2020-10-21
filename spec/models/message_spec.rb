@@ -1,4 +1,4 @@
-describe Message do
+RSpec.describe Message, type: :model do
   describe '#save' do
 
     describe "メッセージ(message)を保存できる場合" do

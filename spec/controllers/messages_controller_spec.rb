@@ -11,6 +11,13 @@ RSpec.describe MessagesController, type: :controller do
           expect(assigns(:group)).to eq group
         end
 
+        it "@messageに期待した値が入っていること" do
+          user  = create(:user)
+          group = create(:group)
+          login user
+          get :index, params: { group_id: group.id }
+          expect(assigns(:message)).to be_a_new(Message)
+        end
       end
 
     end

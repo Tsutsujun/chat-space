@@ -29,6 +29,13 @@ RSpec.describe MessagesController, type: :controller do
         end
       end
 
+      it "index.html.hamlに遷移すること" do
+        user  = create(:user)
+        group = create(:group)
+        login user
+        get :index, params: { group_id: group.id }
+        expect(response).to render_template :index
+      end
     end
 
     context "ログインしていない場合" do

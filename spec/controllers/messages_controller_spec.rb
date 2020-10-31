@@ -1,6 +1,14 @@
 RSpec.describe MessagesController, type: :controller do
   describe 'GET #index' do
 
+    context "ログインしていない場合" do
+      it "ログイン画面にリダイレクトすること" do
+        group = create(:group)
+        get :index, params: { group_id: group.id }
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
     context "ログインしている場合" do
       describe "アクション内で定義しているインスタンス変数に正しい値が入っているか" do
         it "@groupに期待した値が入っていること" do
@@ -36,10 +44,6 @@ RSpec.describe MessagesController, type: :controller do
         get :index, params: { group_id: group.id }
         expect(response).to render_template :index
       end
-    end
-
-    context "ログインしていない場合" do
-
     end
 
   end

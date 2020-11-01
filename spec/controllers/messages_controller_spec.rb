@@ -41,5 +41,17 @@ RSpec.describe MessagesController, type: :controller do
 
   describe 'POST #create' do
 
+    context "ログインしていない場合" do
+
+    end
+
+    context "ログインしている、且つ保存に成功した場合" do
+
+    end
+
+    context "ログインしている、且つ保存に失敗した場合" do
+
+    end
+
   end
 end

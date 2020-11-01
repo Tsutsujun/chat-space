@@ -4,7 +4,6 @@ RSpec.describe MessagesController, type: :controller do
   let(:user)  { create(:user) }
 
   describe 'GET #index' do
-
     context "ログインしていない場合" do
       it "ログイン画面にリダイレクトすること" do
         get :index, params: { group_id: group.id }
@@ -36,12 +35,11 @@ RSpec.describe MessagesController, type: :controller do
       it "index.html.hamlに遷移すること" do
         expect(response).to render_template :index
       end
-    end
 
+    end
   end
 
   describe 'POST #create' do
-
     context "ログインしていない場合" do
       it "ログイン画面にリダイレクトすること" do
         post :create, params: { group_id: group.id }
@@ -49,13 +47,17 @@ RSpec.describe MessagesController, type: :controller do
       end
     end
 
-    context "ログインしている、且つ保存に成功した場合" do
+    context "ログインしている場合" do
+
+      context "保存に成功した場合" do
+
+      end
+
+      context "保存に失敗した場合" do
+
+      end
 
     end
-
-    context "ログインしている、且つ保存に失敗した場合" do
-
-    end
-
   end
+
 end

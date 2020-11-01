@@ -38,4 +38,8 @@ RSpec.describe MessagesController, type: :controller do
     end
 
   end
+
+  describe 'POST #create' do
+
+  end
 end

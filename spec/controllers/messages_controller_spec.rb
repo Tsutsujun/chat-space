@@ -48,6 +48,10 @@ RSpec.describe MessagesController, type: :controller do
     end
 
     context "ログインしている場合" do
+      before do
+        login user
+        post :create, params: { group_id: group.id }
+      end
 
       context "保存に成功した場合" do
 

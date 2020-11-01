@@ -1,7 +1,8 @@
 RSpec.describe MessagesController, type: :controller do
 
-  let(:group) { create(:group) }
-  let(:user)  { create(:user) }
+  let(:group)  { create(:group) }
+  let(:user)   { create(:user) }
+  let(:params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message) } }
 
   describe 'GET #index' do
     context "ログインしていない場合" do
@@ -42,7 +43,7 @@ RSpec.describe MessagesController, type: :controller do
   describe 'POST #create' do
     context "ログインしていない場合" do
       it "ログイン画面にリダイレクトすること" do
-        post :create, params: { group_id: group.id }
+        post :create, params: params
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -50,7 +51,7 @@ RSpec.describe MessagesController, type: :controller do
     context "ログインしている場合" do
       before do
         login user
-        post :create, params: { group_id: group.id }
+        post :create, params: params
       end
 
       context "保存に成功した場合" do

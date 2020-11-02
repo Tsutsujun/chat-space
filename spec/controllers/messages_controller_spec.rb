@@ -2,7 +2,8 @@ RSpec.describe MessagesController, type: :controller do
 
   let(:group)  { create(:group) }
   let(:user)   { create(:user) }
-  let(:params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message) } }
+  let(:params)         { { group_id: group.id, user_id: user.id, message: attributes_for(:message) } }
+  let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, body: "", image: nil) } }
 
   describe 'GET #index' do
     context "ログインしていない場合" do

@@ -37,7 +37,6 @@ RSpec.describe MessagesController, type: :controller do
       it "index.html.hamlに遷移すること" do
         expect(response).to render_template :index
       end
-
     end
   end
 
@@ -70,8 +69,11 @@ RSpec.describe MessagesController, type: :controller do
           expect{ post :create, params: invalid_params }.not_to change(Message, :count)
         end
 
+        it "index.html.hamlに遷移すること" do
+          post :create, params: invalid_params
+          expect(response).to render_template :index
+        end
       end
-
     end
   end
 

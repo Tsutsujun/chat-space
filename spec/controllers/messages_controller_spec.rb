@@ -54,6 +54,9 @@ RSpec.describe MessagesController, type: :controller do
       end
 
       context "保存に成功した場合" do
+        it "メッセージ(message)を保存できること" do
+          expect{ post :create, params: params }.to change(Message, :count).by(1)
+        end
 
       end
 

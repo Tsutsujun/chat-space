@@ -66,6 +66,9 @@ RSpec.describe MessagesController, type: :controller do
       end
 
       context "保存に失敗した場合" do
+        it "メッセージ(message)を保存できないこと" do
+          expect{ post :create, params: invalid_params }.not_to change(Message, :count)
+        end
 
       end
 

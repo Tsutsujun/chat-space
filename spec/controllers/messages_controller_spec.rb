@@ -58,6 +58,10 @@ RSpec.describe MessagesController, type: :controller do
           expect{ post :create, params: params }.to change(Message, :count).by(1)
         end
 
+        it "チャット画面にリダイレクトすること" do
+          post :create, params: params
+          expect(response).to redirect_to(group_messages_path(group))
+        end
       end
 
       context "保存に失敗した場合" do

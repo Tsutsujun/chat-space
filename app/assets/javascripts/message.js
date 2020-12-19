@@ -17,12 +17,12 @@ $(function () {
   function buildHTML(message) {
     if (message.image) {
       return `<div class="MessageInfo">
-                buildTopBox_and_Text(message)
+                ${buildTopBox_and_Text(message)}
                 <img src=${message.image} class="MessageInfo--Img">
               </div>`;
     } else {
       return `<div class="MessageInfo">
-                buildTopBox_and_Text(message)
+                ${buildTopBox_and_Text(message)}
               </div>`;
     };
   };

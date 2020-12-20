@@ -39,11 +39,13 @@ $(function () {
       processData: false,
       contentType: false
     })
-      .done(function (data) {
-        var html = buildHTML(data);
-        console.log(html);
-        $('.MainChat__MessageList').append(html);
-        $('form')[0].reset();
-      })
+    .done(function (data) {
+      var html = buildHTML(data);
+      $('.MainChat__MessageList').append(html);
+      $('form')[0].reset();
+    })
+    .fail(function () {
+      alert("メッセージを入力してください。");
+    });
   });
 });

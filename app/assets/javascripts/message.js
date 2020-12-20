@@ -42,6 +42,7 @@ $(function () {
     .done(function (data) {
       var html = buildHTML(data);
       $('.MainChat__MessageList').append(html);
+      $('.MainChat__MessageList').animate({ scrollTop: $('.MainChat__MessageList')[0].scrollHeight});
       $('form')[0].reset();
     })
     .fail(function () {

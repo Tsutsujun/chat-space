@@ -40,7 +40,6 @@ $(function () {
       contentType: false
     })
     .done(function (data) {
-      console.log(data);
       var html = buildHTML(data);
       $('.MainChat__MessageList').append(html);
       $('.MainChat__MessageList').animate({ scrollTop: $('.MainChat__MessageList')[0].scrollHeight});
@@ -49,6 +48,7 @@ $(function () {
     })
     .fail(function () {
       alert("メッセージを入力してください。");
+      $('.NewMessage--SendBtn').prop('disabled', false);
     });
   });
 });

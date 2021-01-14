@@ -6,7 +6,7 @@ $(function () {
                 ${message.name}
               </p>
               <p class="MessageInfo__TopBox--Date">
-                ${message.time}
+                ${message.date}
               </p>
             </div>
             <p class="MessageInfo--Text">
@@ -42,13 +42,12 @@ $(function () {
     .done(function (data) {
       var html = buildHTML(data);
       $('.MainChat__MessageList').append(html);
-      $('.MainChat__MessageList').animate({ scrollTop: $('.MainChat__MessageList')[0].scrollHeight});
+      $('.MainChat__MessageList').animate({ scrollTop: $('.MainChat__MessageList')[0].scrollHeight }, 'fast');
       $('form')[0].reset();
-      $('.NewMessage--SendBtn').prop('disabled', false);
     })
     .fail(function () {
       alert("メッセージを入力してください。");
-      $('.NewMessage--SendBtn').prop('disabled', false);
     });
+    return false;
   });
 });

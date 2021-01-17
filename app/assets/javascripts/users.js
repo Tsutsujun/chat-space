@@ -27,10 +27,10 @@ $(function () {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function (user) {
-
+          appendUser(user);
         });
       } else {
-
+        appendErrMsg(user);
       };
     })
     .fail(function () {

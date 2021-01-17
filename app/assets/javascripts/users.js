@@ -10,6 +10,11 @@ $(function () {
     })
     .done(function (users) {
       $('#user-search-result').empty();
+      if (users.length !== 0) {
+
+      } else {
+
+      };
     })
     .fail(function () {
       console.log("失敗です。");

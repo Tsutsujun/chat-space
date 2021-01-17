@@ -46,7 +46,6 @@ li {
     text-align: right;
   }
   &__input {
-    float: left;
     width: 100%;
     line-height: 30px;
     padding: 10px 15px;
@@ -95,7 +94,7 @@ li {
     float: left;
   }
   &__btn {
-    display: inline-block;
+    float: right;
     cursor: pointer;
     &--add {
       color: #38aef0;

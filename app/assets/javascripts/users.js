@@ -27,10 +27,12 @@ $(function () {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function (user) {
-          appendUser(user);
+          var html = appendUser(user);
+          console.log(html);
         });
       } else {
-        appendErrMsg(user);
+        var html = appendErrMsg("一致するユーザーが見つかりません");
+        console.log(html);
       };
     })
     .fail(function () {

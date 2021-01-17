@@ -29,8 +29,10 @@ $(function () {
         users.forEach(function (user) {
           addUser(user);
         });
-      } else if (input !== "") {
+      } else if (input.length !== 0) {
         addNoUser("一致するユーザーが見つかりません");
+      } else {
+        return false;
       };
     })
     .fail(function () {

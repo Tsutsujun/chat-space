@@ -9,7 +9,7 @@ $(function () {
       dataType: 'json'
     })
     .done(function (users) {
-      console.log(users);
+      $('#user-search-result').empty();
     })
     .fail(function () {
       console.log("失敗です。");

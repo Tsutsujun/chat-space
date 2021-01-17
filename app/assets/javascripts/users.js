@@ -30,7 +30,7 @@ $(function () {
           var html = appendUser(user);
           console.log(html);
         });
-      } else {
+      } else if (input !== "") {
         var html = appendErrMsg("一致するユーザーが見つかりません");
         console.log(html);
       };

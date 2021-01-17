@@ -7,6 +7,12 @@ $(function () {
                 </div>`;
   };
 
+  function appendErrMsg(msg) {
+    var html = `<div class="chat-group-user">
+                  <p class="chat-group-user__name">${msg}</p>
+                </div>`;
+  };
+
   $('#user_search').on('keyup', function () {
     var input = $(this).val();
     $.ajax({

@@ -40,7 +40,7 @@ $(function () {
     });
 
     $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
-      // console.log()でイベント発火の有無を確認しましょう
+      console.log("イベント発火成功");
     });
   });
 });

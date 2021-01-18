@@ -38,5 +38,9 @@ $(function () {
     .fail(function () {
       alert("ユーザー検索に失敗しました");
     });
+
+    $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
+      // console.log()でイベント発火の有無を確認しましょう
+    });
   });
 });

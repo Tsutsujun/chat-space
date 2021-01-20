@@ -40,7 +40,8 @@ $(function () {
     });
 
     $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
-      console.log("イベント発火成功");
+      var user_id = $(this).attr('data-user-id');
+      var user_name = $(this).attr('data-user-name');
     });
   });
 });

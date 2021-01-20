@@ -42,6 +42,7 @@ $(function () {
     $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
       var user_id = $(this).attr('data-user-id');
       var user_name = $(this).attr('data-user-name');
+      $(this).parent().remove();
     });
   });
 });

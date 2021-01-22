@@ -15,6 +15,15 @@ $(function () {
     $('#user-search-result').append(html);
   };
 
+  function addChatMember(user_id, user_name) {
+    var html = `<div class="chat-group-user">
+                  <input name="group[user_ids][]" type="hidden" value="${user_id}">
+                  <p class="chat-group-user__name">${user_name}</p>
+                  <a class="chat-group-user__btn chat-group-user__btn--remove">削除</a>
+                </div>`;
+    $('#chat-group-users').append(html);
+  };
+
   $('#user_search').on('keyup', function () {
     var input = $(this).val();
     $.ajax({
@@ -38,11 +47,13 @@ $(function () {
     .fail(function () {
       alert("ユーザー検索に失敗しました");
     });
-
-    $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
-      var user_id = $(this).attr('data-user-id');
-      var user_name = $(this).attr('data-user-name');
-      $(this).parent().remove();
-    });
   });
+
+  $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
+    var user_id = $(this).attr('data-user-id');
+    var user_name = $(this).attr('data-user-name');
+    $(this).parent().remove();
+    addChatMember(user_id, user_name);
+  });
+
 });

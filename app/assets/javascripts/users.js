@@ -56,4 +56,8 @@ $(function () {
     addChatMember(user_id, user_name);
   });
 
+  $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function () {
+
+  });
+
 });

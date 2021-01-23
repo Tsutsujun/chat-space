@@ -1,7 +1,7 @@
 $(function () {
 
   function addUser(user) {
-    var html = `<div class="chat-group-user">
+    var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
                   <a class="chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
                 </div>`;
@@ -9,14 +9,14 @@ $(function () {
   };
 
   function addNoUser(msg) {
-    var html = `<div class="chat-group-user">
+    var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${msg}</p>
                 </div>`;
     $('#user-search-result').append(html);
   };
 
   function addChatMember(user_id, user_name) {
-    var html = `<div class="chat-group-user">
+    var html = `<div class="chat-group-user clearfix">
                   <input name="group[user_ids][]" type="hidden" value="${user_id}">
                   <p class="chat-group-user__name">${user_name}</p>
                   <a class="chat-group-user__btn chat-group-user__btn--remove">削除</a>

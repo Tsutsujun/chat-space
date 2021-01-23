@@ -57,7 +57,7 @@ $(function () {
   });
 
   $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function () {
-
+    console.log("イベント発火成功");
   });
 
 });

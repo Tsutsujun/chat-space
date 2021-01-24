@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def index
+    return nil if (params[:keyword] == "")
+    @users = User.search(params[:keyword], current_user)
+  end
+
   def edit
   end
 

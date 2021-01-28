@@ -1,5 +1,8 @@
 $(function () {
 
+  var last_message_id = $('.MessageInfo:last').data('message-id');
+  console.log(last_message_id);
+
   function buildTopBox_and_Text(message) {
     return `<div class="MessageInfo__TopBox">
               <p class="MessageInfo__TopBox--Name">

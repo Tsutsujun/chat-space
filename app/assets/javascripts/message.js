@@ -54,14 +54,14 @@ $(function () {
   });
 
   var reloadMessages = function () {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    // カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $('.message:last').data("message-id");
     $.ajax({
-      //ルーティングで設定した通り/groups/id番号/api/messagesとなるように文字列を書く
+      // ルーティングで設定した通りのURLを指定
       url: 'api/messages',
-      //ルーティングで設定した通りhttpメソッドをGETに指定
+      // ルーティングで設定した通りHTTPメソッドをGETに指定
       type: 'GET',
-      //dataオプションでリクエストに値を含める
+      // dataオプションでリクエストに値を含める
       data: { id: last_message_id },
       dataType: 'json'
     })
@@ -74,6 +74,7 @@ $(function () {
       });
       // メッセージが入ったHTMLに入れ物ごと追加
       $('.MainChat__MessageList').append(insertHTML);
+      $('.MainChat__MessageList').animate({ scrollTop: $('.MainChat__MessageList')[0].scrollHeight }, 'fast');
     })
     .fail(function () {
       alert("error");

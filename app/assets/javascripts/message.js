@@ -66,7 +66,8 @@ $(function () {
       dataType: 'json'
     })
     .done(function (messages) {
-      console.log("success");
+      // 追加するHTMLの入れ物を作る
+      var insertHTML = "";
     })
     .fail(function () {
       alert("error");

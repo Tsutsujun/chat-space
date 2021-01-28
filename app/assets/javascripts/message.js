@@ -16,12 +16,14 @@ $(function () {
 
   function buildHTML(message) {
     if (message.image) {
-      return `<div class="MessageInfo">
+      // data-message-idが反映されるようにしている
+      return `<div class="MessageInfo" data-message-id=${message.id}>
                 ${buildTopBox_and_Text(message)}
                 <img src=${message.image} class="MessageInfo--Img">
               </div>`;
     } else {
-      return `<div class="MessageInfo">
+      // 同様にdata-message-idが反映されるようにしている
+      return `<div class="MessageInfo" data-message-id=${message.id}>
                 ${buildTopBox_and_Text(message)}
               </div>`;
     };

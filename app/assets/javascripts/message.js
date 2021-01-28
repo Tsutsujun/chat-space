@@ -68,6 +68,10 @@ $(function () {
     .done(function (messages) {
       // 追加するHTMLの入れ物を作る
       var insertHTML = "";
+      // 配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物insertHTMLに足し合わせる
+      messages.forEach(function (message) {
+        insertHTML += buildHTML(message);
+      });
     })
     .fail(function () {
       alert("error");

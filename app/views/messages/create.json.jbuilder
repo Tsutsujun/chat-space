@@ -1,3 +1,4 @@
+# idもデータとして渡す
 json.id    @message.id
 json.name  @message.user.name
 json.text  @message.body

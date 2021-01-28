@@ -1,8 +1,5 @@
 $(function () {
 
-  var last_message_id = $('.MessageInfo:last').data('message-id');
-  console.log(last_message_id);
-
   function buildTopBox_and_Text(message) {
     return `<div class="MessageInfo__TopBox">
               <p class="MessageInfo__TopBox--Name">
@@ -53,4 +50,25 @@ $(function () {
     });
     return false;
   });
+
+  var reloadMessages = function () {
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    var last_message_id = $('.message:last').data("message-id");
+    $.ajax({
+      //ルーティングで設定した通り/groups/id番号/api/messagesとなるように文字列を書く
+      url: 'api/messages',
+      //ルーティングで設定した通りhttpメソッドをGETに指定
+      type: 'GET',
+      //dataオプションでリクエストに値を含める
+      data: { id: last_message_id },
+      dataType: 'json'
+    })
+    .done(function (messages) {
+      console.log("success");
+    })
+    .fail(function () {
+      alert("error");
+    });
+  };
+
 });

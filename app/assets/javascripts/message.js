@@ -72,6 +72,8 @@ $(function () {
       messages.forEach(function (message) {
         insertHTML += buildHTML(message);
       });
+      // メッセージが入ったHTMLに入れ物ごと追加
+      $('.MainChat__MessageList').append(insertHTML);
     })
     .fail(function () {
       alert("error");
